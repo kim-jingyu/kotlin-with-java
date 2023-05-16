@@ -29,4 +29,14 @@ public class Lec02Main {
     return str.startsWith("A");
   }
 
+  // early return
+  public long calculate(Long number){
+    if (number == null) {
+      return 0;
+    }
+
+    // 다음 로직
+    return 1L;
+  }
+
 }
