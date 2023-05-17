@@ -7,6 +7,53 @@ public class Lec05Main {
   public static void main(String[] args) {
   }
 
+  private void validateScoreIsNotNegative(int score) {
+    if (score < 0) {
+      throw new IllegalArgumentException(String.format("%s는 0보다 작을 수 없다.", score));
+    }
+  }
+
+  private String getGrade(int score) {
+    if (score >= 90) {
+      return "A";
+    } else if (score >= 80) {
+      return "B";
+    } else if (score >= 70) {
+      return "C";
+    } else {
+      return "D";
+    }
+  }
+
+  private String getGradeWithSwitch(int score) {
+    switch (score / 10) {
+      case 9:
+        return "A";
+      case 8:
+        return "B";
+      case 7:
+        return "C";
+      default:
+        return "D";
+    }
+  }
+
+  private boolean startsWithA(Object object) {
+    if (object instanceof String) {
+      return ((String) object).startsWith("A");
+    } else {
+      return false;
+    }
+  }
+
+  private void judgeNumber(int number) {
+    if (number == 1 || number == 0 || number == -1) {
+      System.out.println("어디서 많이 본 숫자");
+    } else {
+      System.out.println("듣도보도 못한 숫자");
+    }
+  }
+
   private void judgeNumber2(int number) {
     if (number == 0) {
       System.out.println("주어진 숫자는 0입니다");
