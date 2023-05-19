@@ -1,4 +1,4 @@
-package com.kimjingyu
+package com.kimjingyu.lec08
 
 import com.lannstark.lec08.Lec08Main
 
