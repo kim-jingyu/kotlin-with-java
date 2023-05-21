@@ -44,9 +44,44 @@ class KotlinPerson2(
     override fun toString() = "KotlinPerson(name=${name}, age=${age})"
 }
 
+// 3. custom getter, setter. 성인인지 확인
+class KotlinPerson3(
+    name: String,
+    val age: Int
+){
+//    fun isAdult(): Boolean{
+//        return this.age >= 20
+//    }
+
+//    val isAdult: Boolean
+//        get() = this.age >= 20
+
+    val isAdult: Boolean
+        get() {
+            return this.age >= 20
+        }
+
+    // name 을 get 할 때, 무조건 대문자로 바꾸기
+
+    // backing field
+//    val name: String = name
+//        get() = field.uppercase()
+
+//    val upperCaseName: String
+//        get() = this.name.uppercase()
+
+
+    // name 을 set 할 때, 무조건 대문자로 바꿔주기
+    var name: String = name
+        set(value) {
+            field = value.uppercase()
+        }
+}
+
+
 fun main() {
-    val kotlinPerson2 = KotlinPerson2()
-    println("kotlinPerson2 = ${kotlinPerson2}")
+    val kotlinPerson3 = KotlinPerson3("user", 10)
+    println(kotlinPerson3.name)
 }
 
 private fun classAndProperty() {

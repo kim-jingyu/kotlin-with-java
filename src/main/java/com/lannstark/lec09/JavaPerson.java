@@ -18,6 +18,11 @@ public class JavaPerson {
     this(name, 1);
   }
 
+  // 3. custom getter, setter. 성인인지 확인
+  public boolean isAdult() {
+    return this.age >= 20;
+  }
+
   public String getName() {
     return name;
   }
